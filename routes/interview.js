@@ -31,8 +31,10 @@ router.post("/scheduleinterview", (req, res) => {
   let interview = {
     name: req?.body?.name,
     date: new Date(req?.body?.date),
-    startTime: new Date(req?.body?.date + "T" + req?.body?.startTime + ":00"),
-    endTime: new Date(req?.body?.date + "T" + req?.body?.endTime + ":00"),
+    startTime: new Date(
+      req?.body?.date + "T" + req?.body?.startTime + ":00.000Z"
+    ),
+    endTime: new Date(req?.body?.date + "T" + req?.body?.endTime + ":00.000Z"),
     interviewers: req?.body?.interviewers,
     interviewees: req?.body?.interviewees,
   };
@@ -103,8 +105,10 @@ router.put("/updateinterview", (req, res) => {
     id: req.body._id,
     name: req?.body?.name,
     date: new Date(req?.body?.date),
-    startTime: new Date(req?.body?.date + "T" + req?.body?.startTime + ":00"),
-    endTime: new Date(req?.body?.date + "T" + req?.body?.endTime + ":00"),
+    startTime: new Date(
+      req?.body?.date + "T" + req?.body?.startTime + ":00.000Z"
+    ),
+    endTime: new Date(req?.body?.date + "T" + req?.body?.endTime + ":00.000Z"),
     interviewers: req?.body?.interviewers,
     interviewees: req?.body?.interviewees,
   };
